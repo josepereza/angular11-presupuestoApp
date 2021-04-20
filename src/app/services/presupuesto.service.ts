@@ -16,6 +16,6 @@ this.gasto$.next(dato)
 
   }
   getGastos():Observable<any>{
-return this.gasto$.asObservable()
+return this.gasto$
   }
 }

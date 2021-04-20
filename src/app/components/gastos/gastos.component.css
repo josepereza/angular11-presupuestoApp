@@ -13,3 +13,9 @@
     text-align: center;
     justify-self: center;
 }
+@media screen and (max-width: 600px) {
+    .container {
+        width: 100%;
+      flex-direction: column;
+    }
+  }

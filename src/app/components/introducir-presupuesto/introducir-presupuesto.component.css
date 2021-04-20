@@ -1,0 +1,39 @@
+mat-card{
+    width: 70vw !important;
+}
+mat-grid-tile{
+    width: 100vw !important;
+}
+mat-card-content {
+    text-align: center;
+    
+}
+
+
+button{
+    width: 100%;
+}
+h2{
+    font-family: 'Fira Sans', sans-serif;
+}
+#info{
+    background-color: rgb(231, 59, 36);
+   padding: 15px;
+}
+mat-form-field{
+    width: 100%;
+}
+mat-label{
+    font-size: 1.5rem;
+}
+h2{
+    font-size: 2rem;
+}
+input {
+    font-size:1.8rem;
+    width: 70vw !important;
+}
+button{
+    height: 50px;
+    font-size: 1.7rem;
+}

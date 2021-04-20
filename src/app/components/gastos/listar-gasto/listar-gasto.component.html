@@ -1,0 +1,15 @@
+<h2>Listado de Gastos</h2>
+<ng-container>
+    <mat-card [ngClass]="'amarillo'">
+        {{"Presupuesto Total :"}}{{ps.presupuesto}}
+    </mat-card>
+    <mat-card *ngFor="let item of gastos;let indexOfelement=index;">
+       {{item.descripcion}} {{item.importe}}{{" Euros"}}
+       
+           <mat-icon (click)="borrar(indexOfelement,item.importe)" aria-hidden="false" aria-label="Example home icon">delete</mat-icon>
+
+    </mat-card>
+    <mat-card [ngClass]="(ps.restante<=0)?'rojo':'verde'">
+        {{"Presupuesto Restante :"}}{{ps.restante}}
+    </mat-card>
+</ng-container>

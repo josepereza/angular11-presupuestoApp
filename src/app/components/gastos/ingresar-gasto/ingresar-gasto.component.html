@@ -1,0 +1,18 @@
+<h2>Ingresar Gasto</h2>
+<div class="container">
+    <form  [formGroup]="gastoFormulario">
+        <mat-form-field appearance="fill">
+            <mat-label>Descripcion</mat-label>
+            <input type="text" matInput formControlName="descripcion">
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Importe</mat-label>
+            <input matInput type="number" formControlName="importe">
+          </mat-form-field>
+    
+          <button (click)="migasto()" mat-raised-button color="primary">ACEPTAR</button>
+          <button (click)="introducir()" mat-raised-button color="accent">Nuevo Presupuesto</button>
+
+    </form>
+</div>
+

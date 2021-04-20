@@ -1,0 +1,29 @@
+<mat-grid-list cols="1" rowHeight="50vh">
+    <mat-grid-tile>
+
+
+        <mat-card>
+            <mat-card-header>
+                <h2>Ingrese Presupuesto</h2>
+                
+
+                <br><br><br>
+            </mat-card-header>
+            <span *ngIf="info" id="info">Cantidad debe ser mayor que 0</span>
+            <mat-divider></mat-divider>
+            <br>
+            <mat-card-content>
+                <form class="example-form">
+
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Introducca Cantidad</mat-label>
+                        <input matInput type="number" value=null name="presupuesto"  [(ngModel)]="presupuesto">
+                    </mat-form-field>
+                </form>
+                <button (click)="cantidad()" mat-raised-button color="primary">ACEPTAR</button>
+                        </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+
+</mat-grid-list>
+

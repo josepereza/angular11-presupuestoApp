@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { PresupuestoService } from 'src/app/services/presupuesto.service';
 
 @Component({
@@ -9,16 +10,20 @@ import { PresupuestoService } from 'src/app/services/presupuesto.service';
 export class ListarGastoComponent implements OnInit, OnDestroy {
 gastos:any[]=[];
 total:number=0
-  constructor(public ps:PresupuestoService) { }
-
-  ngOnInit(): void {
-    this.ps.getGastos().subscribe(dato=>{
+subscripcion:Subscription
+  constructor(public ps:PresupuestoService) {
+    this.subscripcion=this.ps.getGastos().subscribe(dato=>{
       console.log('listas gasto',dato )
       this.gastos.push(dato)
       this.ps.restante=this.ps.restante-dato.importe
       console.log('gastos ',this.ps.restante)
       console.log('estos gastos mios', this.gastos)
     })
+
+   }
+
+  ngOnInit(): void {
+    
   }
 borrar(indice:any, importe:any){
   this.ps.restante =this.ps.restante+ importe;
@@ -26,6 +31,6 @@ borrar(indice:any, importe:any){
   this.gastos.splice(indice,1)
 }
 ngOnDestroy() {
-  this.gastos=[]
+  this.subscripcion.unsubscribe()
 }
 }

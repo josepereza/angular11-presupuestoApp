@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { PresupuestoService } from 'src/app/services/presupuesto.service';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Subject,Observable } from 'rxjs';
 
 @Component({
   selector: 'app-ingresar-gasto',
@@ -26,7 +25,7 @@ migasto(){
 introducir(){
   this.ps.presupuesto=0;
   this.ps.restante=0;
-  this.ps.gasto$=new Subject();
+  //this.ps.gasto$=new Subject();
   this.router.navigate(['/'])
 }
 }
